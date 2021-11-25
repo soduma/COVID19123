@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Charts
 
 class ViewController: UIViewController {
 
+    @IBOutlet var tatalCaseLabel: UILabel!
+    @IBOutlet var newCaseLabel: UIStackView!
+    @IBOutlet var pieChartView: PieChartView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
