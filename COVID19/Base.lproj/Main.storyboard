@@ -74,9 +74,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVc-wG-e8P"/>
                     <connections>
-                        <outlet property="newCaseLabel" destination="hbI-St-Pcn" id="yIC-Ax-AXH"/>
+                        <outlet property="newCaseLabel" destination="RYv-Nv-mEA" id="gVX-WA-PZG"/>
                         <outlet property="pieChartView" destination="1bj-Lu-iCK" id="ODB-vZ-999"/>
-                        <outlet property="tatalCaseLabel" destination="mj5-nu-JDG" id="eta-nn-GXB"/>
+                        <outlet property="totalCaseLabel" destination="mj5-nu-JDG" id="NfL-qU-gfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

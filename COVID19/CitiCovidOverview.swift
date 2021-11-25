@@ -15,6 +15,7 @@ struct CityCovidOverView: Codable {
     let incheon: CovidOverView
     let gwangju: CovidOverView
     let daejeon: CovidOverView
+    let ulsan: CovidOverView
     let sejong: CovidOverView
     let gyeonggi: CovidOverView
     let gangwon: CovidOverView
