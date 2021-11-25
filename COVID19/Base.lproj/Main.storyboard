@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yob-xj-7py">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yob-xj-7py">
                                 <rect key="frame" x="24" y="112" width="366" height="61"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-3q-sds">
@@ -55,10 +55,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bj-Lu-iCK" customClass="PieChartView" customModule="Charts">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bj-Lu-iCK" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="24" y="197" width="366" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SP9-Zm-4Fw">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,7 +69,9 @@
                             <constraint firstItem="yob-xj-7py" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="BZv-M1-9c3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1bj-Lu-iCK" secondAttribute="bottom" constant="24" id="Cer-Zo-rNA"/>
                             <constraint firstItem="1bj-Lu-iCK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="PeF-Z3-IVD"/>
+                            <constraint firstItem="SP9-Zm-4Fw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="baf-ZD-Q3N"/>
                             <constraint firstItem="1bj-Lu-iCK" firstAttribute="top" secondItem="yob-xj-7py" secondAttribute="bottom" constant="24" id="o6o-9N-lCr"/>
+                            <constraint firstItem="SP9-Zm-4Fw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ojn-sf-ohc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yob-xj-7py" secondAttribute="trailing" constant="24" id="os3-mj-FKu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1bj-Lu-iCK" secondAttribute="trailing" constant="24" id="t5C-I1-osT"/>
                             <constraint firstItem="yob-xj-7py" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="wbv-Ds-WOy"/>
@@ -74,8 +79,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVc-wG-e8P"/>
                     <connections>
+                        <outlet property="indicatorView" destination="SP9-Zm-4Fw" id="k2H-yk-hqF"/>
                         <outlet property="newCaseLabel" destination="RYv-Nv-mEA" id="gVX-WA-PZG"/>
                         <outlet property="pieChartView" destination="1bj-Lu-iCK" id="ODB-vZ-999"/>
+                        <outlet property="stackView" destination="yob-xj-7py" id="Ley-4J-NXt"/>
                         <outlet property="totalCaseLabel" destination="mj5-nu-JDG" id="NfL-qU-gfx"/>
                     </connections>
                 </viewController>
@@ -86,7 +93,7 @@
         <!--Covid Table View Controller-->
         <scene sceneID="L86-ZF-4uO">
             <objects>
-                <tableViewController id="GDE-Le-yiS" customClass="CovidTableViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CovidTableViewController" id="GDE-Le-yiS" customClass="CovidTableViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="IHk-WU-RdF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +284,7 @@
                         <outlet property="percentageCell" destination="ZCW-Lx-ouE" id="W7Q-SA-2mt"/>
                         <outlet property="recoveredCell" destination="nhl-mH-s6I" id="R0u-A8-2x9"/>
                         <outlet property="regionalOutbreakCell" destination="Wcc-GR-pfr" id="6Dp-LZ-90D"/>
-                        <outlet property="tatalCaseCell" destination="aJ0-bj-eRM" id="IKT-3d-Ljc"/>
+                        <outlet property="totalCaseCell" destination="aJ0-bj-eRM" id="IKT-3d-Ljc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpE-R0-joD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

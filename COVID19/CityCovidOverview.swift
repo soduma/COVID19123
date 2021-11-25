@@ -1,5 +1,5 @@
 //
-//  CitiCovidOverview.swift
+//  CityCovidOverview.swift
 //  COVID19
 //
 //  Created by 장기화 on 2021/11/25.
